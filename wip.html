@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Personaje RPG</title>
+  
+</head>
+<body>
+    <div id="character">
+        <h1>Personaje RPG</h1>
+        <p>Puntos disponibles: <span id="points">10</span></p>
+        <div>
+            <label for="strength">Fuerza:</label>
+            <input type="number" id="strength" value="0">
+        </div>
+        <div>
+            <label for="agility">Agilidad:</label>
+            <input type="number" id="agility" value="0">
+        </div>
+        <div>
+            <label for="intelligence">Inteligencia:</label>
+            <input type="number" id="intelligence" value="0">
+        </div>
+        <button id="reset">Restablecer</button>
+    </div>
+
+    <div class="personaje">
+        <h1>Naofumi</h1>
+        <img src="OIP.jpg" alt="Imagen del Personaje">
+        <div class="atributo">
+            <strong>Atributo: Defensor</strong> 
+            <strong>Nivel:</strong> 10
+        </div>
+        <div class="atributo">
+            <strong>Salud:</strong> 100/100
+        </div>
+        <div class="atributo">
+            <strong>Ataque:</strong> 20
+        </div>
+        <div class="atributo">
+            <strong>Defensa:</strong> 25
+        </div>
+        <div class="atributo">
+            <strong>Magia:</strong> 15
+        </div>
+    </div>
+
+
+
+<script>
+        const pointsSpan = document.getElementById("points");
+        const strengthInput = document.getElementById("strength");
+        const agilityInput = document.getElementById("agility");
+        const intelligenceInput = document.getElementById("intelligence");
+        const resetButton = document.getElementById("reset");
+
+        let availablePoints = 10;
+
+        // Función para actualizar los puntos disponibles
+        function updatePoints() {
+            const strengthValue = parseInt(strengthInput.value);
+            const agilityValue = parseInt(agilityInput.value);
+            const intelligenceValue = parseInt(intelligenceInput.value);
+
+            availablePoints = 10 - (strengthValue + agilityValue + intelligenceValue);
+            pointsSpan.textContent = availablePoints;
+        }
+
+ // Evento para actualizar los puntos disponibles cuando cambian los valores
+ strengthInput.addEventListener("input", updatePoints);
+        agilityInput.addEventListener("input", updatePoints);
+        intelligenceInput.addEventListener("input", updatePoints);
+
+        // Evento para restablecer los valores
+        resetButton.addEventListener("click", function () {
+            strengthInput.value = 0;
+            agilityInput.value = 0;
+            intelligenceInput.value = 0;
+
+            availablePoints = 10;
+            pointsSpan.textContent = availablePoints;
+        });
+
+        // Llamamos a la función inicialmente para mostrar los puntos disponibles
+        updatePoints();
+    </script>
+</body>
+</html>
+Este código crea una página web simple donde el jugador puede asignar puntos a tres atributos diferentes (fuerza, agilidad e inteligencia) y muestra los puntos disponibles. Los valores de los atributos se actualizan en tiempo real y el jugador no puede asignar más puntos de los que tiene disponibles (10 en este caso). También hay un botón para restablecer los valores a cero. Puedes ampliar este código y agregar más características según tus necesidades.
+
+
+
+
+
+
+
