@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Personajes con Imágenes</title>
+</head>
+<body>
+    <h1>Selecciona tu personaje</h1>
+    
+    <select id="characterSelector">
+        <option value="personaje1">Personaje 1</option>
+        <option value="personaje2">Personaje 2</option>
+        <option value="personaje3">Personaje 3</option>
+    </select>
+
+    <button onclick="seleccionarPersonaje()">Seleccionar</button>
+
+    <div id="mensaje"></div>
+
+    <div id="characterImage">
+        <img src="" alt="Imagen del Personaje" id="characterImg">
+    </div>
+
+    <script>
+        function seleccionarPersonaje() {
+            const selector = document.getElementById("characterSelector");
+            const selectedCharacter = selector.value;
+
+            let mensaje = "";
+            let imageSrc = "";
+
+            switch (selectedCharacter) {
+                case "personaje1":
+                    mensaje = "Has seleccionado al Personaje 1.";
+                    imageSrc = "OIP.JPG";
+                    break;
+                case "personaje2":
+                    mensaje = "Has seleccionado al Personaje 2.";
+                    imageSrc = "rapta.jpg";
+                    break;
+                case "personaje3":
+                    mensaje = "Has seleccionado al Personaje 3.";
+                    imageSrc = "rapta.jpg";
+                    break;
+                default:
+                    mensaje = "Selecciona un personaje válido.";
+                    imageSrc = "";
+            }
+
+            document.getElementById("mensaje").textContent = mensaje;
+            document.getElementById("characterImg").src = imageSrc;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+#character {
+    display: flex;
+    border: 2px solid #333;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+#characterImages{
+    display: flex;
+}
+img{
+    width: 200px;
+}
