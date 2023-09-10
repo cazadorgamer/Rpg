@@ -1,98 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Personaje RPG</title>
-  
+    <title>Selector de Personajes para 2 Jugadores</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="character">
-        <h1>Personaje RPG</h1>
-        <p>Puntos disponibles: <span id="points">10</span></p>
-        <div>
-            <label for="strength">Fuerza:</label>
-            <input type="number" id="strength" value="0">
-        </div>
-        <div>
-            <label for="agility">Agilidad:</label>
-            <input type="number" id="agility" value="0">
-        </div>
-        <div>
-            <label for="intelligence">Inteligencia:</label>
-            <input type="number" id="intelligence" value="0">
-        </div>
-        <button id="reset">Restablecer</button>
+    <h1>Selecciona tus personajes</h1>
+    
+    <div id="player1">
+        <h2>Jugador 1</h2>
+        <select id="characterSelector1">
+            <option value="personaje1">naofumi</option>
+            <option value="personaje2">rapthalia</option>
+            <option value="personaje3">Personaje 3</option>
+        </select>
     </div>
 
-    <div class="personaje">
-        <h1>Naofumi</h1>
-        <img src="OIP.jpg" alt="Imagen del Personaje">
-        <div class="atributo">
-            <strong>Atributo: Defensor</strong> 
-            <strong>Nivel:</strong> 10
+    <div id="player2">
+        <h2>Jugador 2</h2>
+        <select id="characterSelector2">
+            <option value="personaje1">naofumi</option>
+            <option value="personaje2">rapthalia</option>
+            <option value="personaje3">Personaje 3</option>
+        </select>
+    </div>
+
+    <button onclick="seleccionarPersonajes()">Seleccionar</button>
+
+    <div id="mensaje"></div>
+
+    <div id="characterImages">
+        <div id="characterImage1">
+            <img src="" alt="Imagen del Jugador 1" id="characterImg1">
+            <p>Salud: <span id="health1">100</span></p>
+            <button onclick="attack(1)">Atacar</button>
         </div>
-        <div class="atributo">
-            <strong>Salud:</strong> 100/100
-        </div>
-        <div class="atributo">
-            <strong>Ataque:</strong> 20
-        </div>
-        <div class="atributo">
-            <strong>Defensa:</strong> 25
-        </div>
-        <div class="atributo">
-            <strong>Magia:</strong> 15
+        <div id="characterImage2">
+            <img src="" alt="Imagen del Jugador 2" id="characterImg2">
+            <p>Salud: <span id="health2">100</span></p>
+            <button onclick="attack(2)">Atacar</button>
         </div>
     </div>
 
+    <script>
+        function seleccionarPersonajes() {
+            const selector1 = document.getElementById("characterSelector1");
+            const selector2 = document.getElementById("characterSelector2");
+            const selectedCharacter1 = selector1.value;
+            const selectedCharacter2 = selector2.value;
 
+            let mensaje1 = "";
+            let mensaje2 = "";
+            let imageSrc1 = "";
+            let imageSrc2 = "";
 
-<script>
-        const pointsSpan = document.getElementById("points");
-        const strengthInput = document.getElementById("strength");
-        const agilityInput = document.getElementById("agility");
-        const intelligenceInput = document.getElementById("intelligence");
-        const resetButton = document.getElementById("reset");
+            switch (selectedCharacter1) {
+                case "personaje1":
+                    mensaje1 = "Jugador 1 ha seleccionado al Personaje 1.";
+                    imageSrc1 = "OIP.jpg";
+                    break;
+                case "personaje2":
+                    mensaje1 = "Jugador 1 ha seleccionado al Personaje 2.";
+                    imageSrc1 = "rapta.jpg";
+                    break;
+                case "personaje3":
+                    mensaje1 = "Jugador 1 ha seleccionado al Personaje 3.";
+                    imageSrc1 = "imagen_personaje3.jpg";
+                    break;
+                default:
+                    mensaje1 = "Jugador 1 debe seleccionar un personaje válido.";
+            }
 
-        let availablePoints = 10;
+            switch (selectedCharacter2) {
+                case "personaje1":
+                    mensaje2 = "Jugador 2 ha seleccionado al Personaje 1.";
+                    imageSrc2 = "OIP.jpg";
+                    break;
+                case "personaje2":
+                    mensaje2 = "Jugador 2 ha seleccionado al Personaje 2.";
+                    imageSrc2 = "rapta.jpg";
+                    break;
+                case "personaje3":
+                    mensaje2 = "Jugador 2 ha seleccionado al Personaje 3.";
+                    imageSrc2 = "imagen_personaje3.jpg";
+                    break;
+                default:
+                    mensaje2 = "Jugador 2 debe seleccionar un personaje válido.";
+            }
 
-        // Función para actualizar los puntos disponibles
-        function updatePoints() {
-            const strengthValue = parseInt(strengthInput.value);
-            const agilityValue = parseInt(agilityInput.value);
-            const intelligenceValue = parseInt(intelligenceInput.value);
-
-            availablePoints = 10 - (strengthValue + agilityValue + intelligenceValue);
-            pointsSpan.textContent = availablePoints;
+            document.getElementById("mensaje").textContent = mensaje1 + " " + mensaje2;
+            document.getElementById("characterImg1").src = imageSrc1;
+            document.getElementById("characterImg2").src = imageSrc2;
         }
+        let health1 = 100;
+        let health2 = 100;
 
- // Evento para actualizar los puntos disponibles cuando cambian los valores
- strengthInput.addEventListener("input", updatePoints);
-        agilityInput.addEventListener("input", updatePoints);
-        intelligenceInput.addEventListener("input", updatePoints);
+        function attack(attacker) {
+            const target = attacker === 1 ? 2 : 1; // Cambiar de objetivo
 
-        // Evento para restablecer los valores
-        resetButton.addEventListener("click", function () {
-            strengthInput.value = 0;
-            agilityInput.value = 0;
-            intelligenceInput.value = 0;
+            const damage = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
+            const damage2 = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
 
-            availablePoints = 10;
-            pointsSpan.textContent = availablePoints;
-        });
+            if (target === 1) {
+                health1 -= damage;
+                health2 -= damage2;
+                if (health1 < 0) health1 = 0;
+                document.getElementById('health1').textContent = health1;
+                document.getElementById('health2').textContent = health2;
+            } else {
+                health1 -= damage;
 
-        // Llamamos a la función inicialmente para mostrar los puntos disponibles
-        updatePoints();
+                health2 -= damage2;
+                if (health2 < 0) health2 = 0;
+                document.getElementById('health1').textContent = health1;
+                document.getElementById('health2').textContent = health2;
+            }
+
+            if (health1 === 0 && health2 > 0 ) {
+                alert('Personaje 2 ha ganado');
+            } else if (health2 === 0 && health1 > 0 ) {
+                alert('Personaje 1 ha ganado');
+            }
+        }
     </script>
 </body>
 </html>
-Este código crea una página web simple donde el jugador puede asignar puntos a tres atributos diferentes (fuerza, agilidad e inteligencia) y muestra los puntos disponibles. Los valores de los atributos se actualizan en tiempo real y el jugador no puede asignar más puntos de los que tiene disponibles (10 en este caso). También hay un botón para restablecer los valores a cero. Puedes ampliar este código y agregar más características según tus necesidades.
-
-
-
-
-
-
-
