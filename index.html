@@ -13,8 +13,10 @@
         <h2>Jugador 1</h2>
         <select id="characterSelector1">
             <option value="personaje1">naofumi</option>
-            <option value="personaje2">rapthalia</option>
-            <option value="personaje3">Personaje 3</option>
+            <option value="personaje2">amy</option>
+            <option value="personaje3">ai</option>
+            <option value="personaje4">aSIN</option>
+            <option value="personaje5">aRME</option>
         </select>
     </div>
 
@@ -22,8 +24,10 @@
         <h2>Jugador 2</h2>
         <select id="characterSelector2">
             <option value="personaje1">naofumi</option>
-            <option value="personaje2">rapthalia</option>
-            <option value="personaje3">Personaje 3</option>
+            <option value="personaje2">amy</option>
+            <option value="personaje3">ai</option>
+            <option value="personaje4">aRME</option>
+            <option value="personaje5">aSiN</option>
         </select>
     </div>
 
@@ -40,7 +44,7 @@
         <div id="characterImage2">
             <img src="" alt="Imagen del Jugador 2" id="characterImg2">
             <p>Salud: <span id="health2">100</span></p>
-            <button onclick="attack(2)">Atacar</button>
+            
         </div>
     </div>
 
@@ -58,16 +62,24 @@
 
             switch (selectedCharacter1) {
                 case "personaje1":
-                    mensaje1 = "Jugador 1 ha seleccionado al Personaje 1.";
+                    mensaje1 = "Jugador 1 ha seleccionado a NAOFUMI.";
                     imageSrc1 = "OIP.jpg";
                     break;
                 case "personaje2":
-                    mensaje1 = "Jugador 1 ha seleccionado al Personaje 2.";
-                    imageSrc1 = "rapta.jpg";
+                mensaje1 = "Jugador 2 ha seleccionado a AMY.";
+                    imageSrc1 = "AMY_SD.png";
                     break;
                 case "personaje3":
-                    mensaje1 = "Jugador 1 ha seleccionado al Personaje 3.";
-                    imageSrc1 = "imagen_personaje3.jpg";
+                    mensaje1 = "Jugador 1 ha seleccionado a AI.";
+                    imageSrc1 = "AI_SD.PNG";
+                    break;
+                    case "personaje4":
+                    mensaje1 = "Jugador 2 ha seleccionado a ASIN.";
+                    imageSrc1 = "ASIN_SD.png";
+                    break;
+                case "personaje5":
+                    mensaje1 = "Jugador 2 ha seleccionado a ARME.";
+                    imageSrc1 = "ARME_SD.PNG";
                     break;
                 default:
                     mensaje1 = "Jugador 1 debe seleccionar un personaje válido.";
@@ -75,16 +87,24 @@
 
             switch (selectedCharacter2) {
                 case "personaje1":
-                    mensaje2 = "Jugador 2 ha seleccionado al Personaje 1.";
+                    mensaje2 = "Jugador 2 ha seleccionado a NAOFUMI.";
                     imageSrc2 = "OIP.jpg";
                     break;
                 case "personaje2":
-                    mensaje2 = "Jugador 2 ha seleccionado al Personaje 2.";
-                    imageSrc2 = "rapta.jpg";
+                    mensaje2 = "Jugador 2 ha seleccionado a AMY.";
+                    imageSrc2 = "AMY_SD.png";
                     break;
                 case "personaje3":
-                    mensaje2 = "Jugador 2 ha seleccionado al Personaje 3.";
-                    imageSrc2 = "imagen_personaje3.jpg";
+                    mensaje2 = "Jugador 2 ha seleccionado a AI.";
+                    imageSrc2 = "AI_SD.PNG";
+                    break;
+                    case "personaje4":
+                    mensaje2 = "Jugador 2 ha seleccionado a ARME.";
+                    imageSrc2 = "ARME_SD.png";
+                    break;
+                case "personaje5":
+                    mensaje2 = "Jugador 2 ha seleccionado a ASIN.";
+                    imageSrc2 = "ASIN_SD.PNG";
                     break;
                 default:
                     mensaje2 = "Jugador 2 debe seleccionar un personaje válido.";
@@ -118,9 +138,9 @@
                 document.getElementById('health2').textContent = health2;
             }
 
-            if (health1 === 0 && health2 > 0 ) {
+            if (health1 === 0  ) {
                 alert('Personaje 2 ha ganado');
-            } else if (health2 === 0 && health1 > 0 ) {
+            } else if (health2 === 0  ) {
                 alert('Personaje 1 ha ganado');
             }
         }
