@@ -66,7 +66,7 @@
                     imageSrc1 = "OIP.jpg";
                     break;
                 case "personaje2":
-                mensaje1 = "Jugador 2 ha seleccionado a AMY.";
+                mensaje1 = "Jugador 1 ha seleccionado a AMY.";
                     imageSrc1 = "Amy.JPG";
                     break;
                 case "personaje3":
@@ -74,11 +74,11 @@
                     imageSrc1 = "Ai.JPG";
                     break;
                     case "personaje4":
-                    mensaje1 = "Jugador 2 ha seleccionado a ASIN.";
+                    mensaje1 = "Jugador 1 ha seleccionado a ASIN.";
                     imageSrc1 = "Asin.JPG";
                     break;
                 case "personaje5":
-                    mensaje1 = "Jugador 2 ha seleccionado a ARME.";
+                    mensaje1 = "Jugador 1 ha seleccionado a ARME.";
                     imageSrc1 = "Arme.JPG";
                     break;
                 default:
@@ -87,27 +87,27 @@
 
             switch (selectedCharacter2) {
                 case "personaje1":
-                    mensaje2 = "Jugador 2 ha seleccionado a NAOFUMI.";
+                    mensaje2 = "cpu ha seleccionado a NAOFUMI.";
                     imageSrc2 = "OIP.jpg";
                     break;
                 case "personaje2":
-                    mensaje2 = "Jugador 2 ha seleccionado a AMY.";
+                    mensaje2 = "cpu ha seleccionado a AMY.";
                     imageSrc2 = "Amy.JPG";
                     break;
                 case "personaje3":
-                    mensaje2 = "Jugador 2 ha seleccionado a AI.";
+                    mensaje2 = "cpu ha seleccionado a AI.";
                     imageSrc2 = "Ai.JPG";
                     break;
                     case "personaje4":
-                    mensaje2 = "Jugador 2 ha seleccionado a ARME.";
+                    mensaje2 = "cpu ha seleccionado a ARME.";
                     imageSrc2 = "Arme.JPG";
                     break;
                 case "personaje5":
-                    mensaje2 = "Jugador 2 ha seleccionado a ASIN.";
+                    mensaje2 = "cpu ha seleccionado a ASIN.";
                     imageSrc2 = "Asin.JPG";
                     break;
                 default:
-                    mensaje2 = "Jugador 2 debe seleccionar un personaje válido.";
+                    mensaje2 = "cpu debe seleccionar un personaje válido.";
             }
 
             document.getElementById("mensaje").textContent = mensaje1 + " " + mensaje2;
@@ -124,8 +124,7 @@
             const damage2 = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
 
             if (target === 1) {
-                health1 -= damage;
-                health2 -= damage2;
+                
                 if (health1 < 0) health1 = 0;
                 document.getElementById('health1').textContent = health1;
                 document.getElementById('health2').textContent = health2;
@@ -140,7 +139,7 @@
 
             if (health1 === 0  ) {
                 alert('Personaje 2 ha ganado');
-            } else if (health2 === 0  ) {
+            } else if (health2 === 0   ) {
                 alert('Personaje 1 ha ganado');
             }
         }
