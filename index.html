@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Selecciona tus personajes</h1>
+                                                                                                                                                                                                                                        
+
+   
     
     <div id="player1">
         <h2>Jugador 1</h2>
@@ -26,8 +29,8 @@
             <option value="personaje1">naofumi</option>
             <option value="personaje2">amy</option>
             <option value="personaje3">ai</option>
-            <option value="personaje4">aRME</option>
-            <option value="personaje5">aSiN</option>
+            <option value="personaje4">aSIN</option>
+            <option value="personaje5">aRME</option>
         </select>
     </div>
 
@@ -43,10 +46,11 @@
         </div>
         <div id="characterImage2">
             <img src="" alt="Imagen del Jugador 2" id="characterImg2">
-            <p>Salud: <span id="health2">100</span></p>                                                                                                                                                                                                                                                                                                                            
-            
+            <p>Salud: <span id="health2">100</span></p>
+            <button onclick="attack(2)">Atacar</button>
         </div>
     </div>
+
 
     <script>
         function seleccionarPersonajes() {
@@ -116,33 +120,39 @@
         }
         let health1 = 100;
         let health2 = 100;
-
         function attack(attacker) {
             const target = attacker === 1 ? 2 : 1; // Cambiar de objetivo
 
             const damage = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
             const damage2 = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
 
-            if (target === 1) {
-                
-                if (health1 < 0) health1 = 0;
-                document.getElementById('health1').textContent = health1;
-                document.getElementById('health2').textContent = health2;
-            } else {
-                health1 -= damage;
 
-                health2 -= damage2;
-                if (health2 < 0) health2 = 0;
+            if (target === 2) {
+                health1 -= damage; // El segundo personaje es atacado por el primero
+                health2-=damage2;
+                if (health2 <= 0) health2 = 0;
+                document.getElementById('health2').textContent = health2;
+                document.getElementById('health1').textContent = health1;
+
+
+
+            } if(target ===1) {
+                health1 -= damage; // El primer personaje es atacado por el segundo
+                health2 -=damage2;
+                if (health1 <= 0) health1 = 0;
                 document.getElementById('health1').textContent = health1;
                 document.getElementById('health2').textContent = health2;
             }
 
-            if (health1 === 0  ) {
+            if (health1 < 1) {
                 alert('Personaje 2 ha ganado');
-            } else if (health2 === 0   ) {
+            } 
+             if (health2 < 1) {
                 alert('Personaje 1 ha ganado');
             }
         }
+        
+
     </script>
 </body>
 </html>
