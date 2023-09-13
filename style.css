@@ -16,3 +16,32 @@ body {
 img{
     width: 200px;
 }
+/* Agrega este código en tu archivo style.css o en una etiqueta <style> en el encabezado del HTML */
+button {
+    background-color: #3498db; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Relleno (espacio alrededor del texto) */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+}
+
+/* Estilos adicionales para cuando el cursor está sobre el botón */
+button:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar por encima */
+}
+/* Estilos para botones con la clase "custom-button" */
+.custom-button {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #c0392b;
+}
