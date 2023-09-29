@@ -1,6 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: Arial, sans-serif; /* Fuente de texto predeterminada */
+    background-color: #f2f2f2; /* Color de fondo de la página */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    padding: 0; /* Elimina el relleno predeterminado del cuerpo */
 }
 #character {
     display: flex;
@@ -10,8 +12,118 @@ body {
     margin: 0 auto;
 }
 #characterImages{
-    display: flex;
+    
+ 
 }
 img{
     width: 200px;
+}
+/* Agrega este código en tu archivo style.css o en una etiqueta <style> en el encabezado del HTML */
+button {
+    background-color: #3498db; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Relleno (espacio alrededor del texto) */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+}
+
+/* Estilos adicionales para cuando el cursor está sobre el botón */
+button:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar por encima */
+}
+/* Estilos para botones con la clase "custom-button" */
+.custom-button {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #c0392b;
+}
+/* Estilo general de la página */
+
+
+/* Encabezado */
+h1 {
+    color: #333; /* Color del texto del encabezado */
+}
+
+/* Estilo para los contenedores principales */
+.container {
+    max-width: 1200px; /* Ancho máximo del contenido principal */
+    margin: 0 auto; /* Centrar el contenido en la página */
+    padding: 20px; /* Espacio alrededor del contenido */
+    background-color: #fff; /* Color de fondo del contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo para los botones en toda la página */
+button{
+background-color: #3498db;
+color: #ffffff;
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+} 
+
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Agregar estilos adicionales según sea necesario para otros elementos de la página */
+/* Estilo para las imágenes dentro de los contenedores */
+#characterImage1 img,
+#characterImage2 img {
+    display: block; /* Asegura que la imagen sea un bloque en línea */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+}
+
+/* Estilo general de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Utiliza flexbox para centrar verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    min-height: 100vh; /* Establece el alto mínimo de la página al 100% del alto de la ventana */
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center; /* Centra el texto en el contenedor */
+}
+
+/* Estilo para los botones en toda la página */
+button {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-top:50px ;
+}
+
+button:hover {
+    background-color: #2980b9;
 }
