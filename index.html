@@ -76,19 +76,34 @@
     <div id="characterImages">
         <div id="characterImage1">
             <img src="" alt="Imagen del Jugador 1" id="characterImg1">
-            <p>Salud: <span id="health1">100</span></p>
+            <div class="character-bar">
+                <div id="healthBar1" class="health-bar"></div>
+                <p>Salud: <span id="health1">100</span></p>
+            </div>
+            
+            
+                
+              
 <!-- Agrega una clase "custom-button" al botón -->
 <button class="custom-button" onclick="attack(1)">Atacar</button>
             
         </div>
         <div id="characterImage2">
+
             <img src="" alt="Imagen del Jugador 2" id="characterImg2">
-            <p>Salud: <span id="health2">100</span></p>
+            <div class="character-bar">
+                <div id="healthBar2" class="health-bar"></div>
+                <p>Salud: <span id="health2">100</span></p>
+            </div>
             
         </div>
     </div>
 
 </div>
+
+<!-- Botón de reset -->
+<button onclick="resetearPersonajes()">Resetear Personajes</button>
+
     <script>
         function seleccionarPersonajes() {
             const selector1 = document.getElementById("characterSelector1");
@@ -312,7 +327,8 @@
 
             const damage = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
             const damage2 = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
-
+            const progress = document.querySelector("progress");
+            const progress2 = document.querySelector("progress");
 
             if (target === 2) {
                 health1 -= damage; // El segundo personaje es atacado por el primero
@@ -330,6 +346,9 @@
                 document.getElementById('health1').textContent = health1;
                 document.getElementById('health2').textContent = health2;
             }
+ updateHealth(1, health1); 
+ updateHealth(2, health2); 
+  
 
             if (health1 < 1) {
                 alert('Personaje 2 ha ganado');
@@ -339,6 +358,40 @@
             }
         }
         
+
+        function updateHealth(character, healthValue) {
+    const healthBar = document.getElementById(`healthBar${character}`);
+    const healthSpan = document.getElementById(`health${character}`);
+
+    // Asegurarse de que la salud esté dentro del rango 0-100
+    healthValue = Math.max(0, Math.min(100, healthValue));
+
+    // Actualizar la anchura de la barra de vida
+    healthBar.style.width = `${healthValue}%`;
+
+    // Actualizar el valor de la salud en el span
+    healthSpan.textContent = healthValue;
+}
+
+// Ejemplo de uso:
+// updateHealth(1, 75); // Actualiza la barra de vida del primer personaje a 75
+// updateHealth(2, 50); // Actualiza la barra de vida del segundo personaje a 50
+function resetearPersonajes() {
+    // Restaurar la selección de personajes a los valores predeterminados
+    const selector1 = document.getElementById("characterSelector1");
+    const selector2 = document.getElementById("characterSelector2");
+    selector1.value = "personaje1"; // Restaurar la selección del jugador 1
+    selector2.value = "personaje1"; // Restaurar la selección del jugador 2
+
+    // Restaurar la salud de ambos personajes
+    health1 = 100;
+    health2 = 100;
+
+    // Actualizar visualmente la salud y la selección de personajes
+    updateHealth(1, health1);
+    updateHealth(2, health2);
+    seleccionarPersonajes(); // Actualizar la selección de personajes visualmente
+}
 
     </script>
 </body>
