@@ -98,11 +98,14 @@
             
         </div>
     </div>
-
+    <button onclick="resetearPersonajes()">Resetear Personajes</button>
+    <footer>
+        <p>Todos los personajes son propiedad de Kog</p>
+    </footer>
 </div>
 
 <!-- Botón de reset -->
-<button onclick="resetearPersonajes()">Resetear Personajes</button>
+
 
     <script>
         function seleccionarPersonajes() {
@@ -119,7 +122,7 @@
             switch (selectedCharacter1) {
                 case "personaje1":
                     mensaje1 = "personaje no disponible";
-                    imageSrc1 = "OIP.jpg";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220672983_36bd2ebd0b_m.jpg";
                     break;
                 case "personaje2":
                 mensaje1 = "Jugador 1 ha seleccionado a AMY.";
@@ -394,5 +397,6 @@ function resetearPersonajes() {
 }
 
     </script>
+    
 </body>
 </html>
