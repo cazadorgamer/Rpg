@@ -16,22 +16,56 @@
     <div id="player1">
         <h2>Jugador 1</h2>
         <select id="characterSelector1">
-            <option value="personaje1">naofumi</option>
-            <option value="personaje2">amy</option>
-            <option value="personaje3">ai</option>
-            <option value="personaje4">aSIN</option>
-            <option value="personaje5">aRME</option>
+            <option value="personaje1">Personaje no disponible</option>
+            <option value="personaje2">Amy</option>
+            <option value="personaje3">Ai</option>
+            <option value="personaje4">Asin</option>
+            <option value="personaje5">Arme</option>
+            <option value="personaje6">Decane</option>
+            <option value="personaje7">Dio</option>
+            <option value="personaje8">Edel</option>
+            <option value="personaje9">Elesis</option>
+            <option value="personaje10">Jin</option>
+            <option value="personaje11">lass</option>
+            <option value="personaje12">ley</option>
+            <option value="personaje13">lime</option>
+            <option value="personaje14">lire</option>
+            <option value="personaje15">mari</option>
+            <option value="personaje16">rin</option>
+            <option value="personaje17">ronan</option>
+            <option value="personaje18">rufus</option>
+            <option value="personaje19">ryan</option>
+            <option value="personaje20">siegart</option>
+            <option value="personaje21">veigas</option>
+            <option value="personaje22">zero</option>
         </select>
     </div>
 
     <div id="player2">
         <h2>Jugador 2</h2>
         <select id="characterSelector2">
-            <option value="personaje1">naofumi</option>
+            <option value="personaje1">peronaje no disponible</option>
             <option value="personaje2">amy</option>
             <option value="personaje3">ai</option>
             <option value="personaje4">arme</option>
             <option value="personaje5">asin</option>
+            <option value="personaje6">Decane</option>
+            <option value="personaje7">Dio</option>
+            <option value="personaje8">Edel</option>
+            <option value="personaje9">Elesis</option>
+            <option value="personaje10">Jin</option>
+            <option value="personaje11">lass</option>
+            <option value="personaje12">ley</option>
+            <option value="personaje13">lime</option>
+            <option value="personaje14">lire</option>
+            <option value="personaje15">mari</option>
+            <option value="personaje16">rin</option>
+            <option value="personaje17">ronan</option>
+            <option value="personaje18">rufus</option>
+            <option value="personaje19">ryan</option>
+            <option value="personaje20">siegart</option>
+            <option value="personaje21">veigas</option>
+            <option value="personaje22">zero</option>
         </select>
     </div>
 
@@ -42,19 +76,37 @@
     <div id="characterImages">
         <div id="characterImage1">
             <img src="" alt="Imagen del Jugador 1" id="characterImg1">
-            <p>Salud: <span id="health1">100</span></p>
+            <div class="character-bar">
+                <div id="healthBar1" class="health-bar"></div>
+                <p>Salud: <span id="health1">100</span></p>
+            </div>
+            
+            
+                
+              
 <!-- Agrega una clase "custom-button" al botón -->
 <button class="custom-button" onclick="attack(1)">Atacar</button>
             
         </div>
         <div id="characterImage2">
+
             <img src="" alt="Imagen del Jugador 2" id="characterImg2">
-            <p>Salud: <span id="health2">100</span></p>
+            <div class="character-bar">
+                <div id="healthBar2" class="health-bar"></div>
+                <p>Salud: <span id="health2">100</span></p>
+            </div>
             
         </div>
     </div>
-
+    <button onclick="resetearPersonajes()">Resetear Personajes</button>
+    <footer>
+        <p>Todos los personajes son propiedad de Kog</p>
+    </footer>
 </div>
+
+<!-- Botón de reset -->
+
+
     <script>
         function seleccionarPersonajes() {
             const selector1 = document.getElementById("characterSelector1");
@@ -69,50 +121,200 @@
 
             switch (selectedCharacter1) {
                 case "personaje1":
-                    mensaje1 = "Jugador 1 ha seleccionado a NAOFUMI.";
-                    imageSrc1 = "OIP.jpg";
+                    mensaje1 = "personaje no disponible";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220672983_36bd2ebd0b_m.jpg";
                     break;
                 case "personaje2":
                 mensaje1 = "Jugador 1 ha seleccionado a AMY.";
-                    imageSrc1 = "Amy.jpg";
+                    imageSrc1 ="https://live.staticflickr.com/65535/53220362336_ea0d733b96_k.jpg";
+
                     break;
                 case "personaje3":
                     mensaje1 = "Jugador 1 ha seleccionado a AI.";
-                    imageSrc1 = "Ai.jpg";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220869275_c4ed811aaf_m.jpg";
                     break;
                     case "personaje4":
                     mensaje1 = "Jugador 1 ha seleccionado a ASIN.";
-                    imageSrc1 = "Asin.jpg";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220869085_254de1d0d7_m.jpg";
                     break;
                 case "personaje5":
                     mensaje1 = "Jugador 1 ha seleccionado a ARME.";
-                    imageSrc1 = "Arme.jpg";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220362281_e9a362b40d_m.jpg";
+                    break;
+                    case "personaje6":
+                    mensaje1 = "Jugador 1 ha seleccionado a Decane.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220673113_2736648a0e_m.jpg";
+                    break;
+                case "personaje7":
+                mensaje1 = "Jugador 1 ha seleccionado a Dio.";
+                    imageSrc1 ="https://live.staticflickr.com/65535/53219488842_c05ea7c1a3_m.jpg";
+
+                    break;
+                case "personaje8":
+                    mensaje1 = "Jugador 1 ha seleccionado a Edel.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220747139_3d42c6cd2c_m.jpg";
+                    break;
+                    case "personaje9":
+                    mensaje1 = "Jugador 1 ha seleccionado a Elesis.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220869020_f4627b66a9_m.jpg";
+                    break;
+                case "personaje10":
+                    mensaje1 = "Jugador 1 ha seleccionado a Jin.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220672983_36bd2ebd0b_m.jpg";
+                    break;
+
+                    case "personaje11":
+                    mensaje1 = "Jugador 1 ha seleccionado a LASS.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220746984_5124ed75a9_m.jpg";
+                    break;
+                case "personaje12":
+                    mensaje1 = "Jugador 1 ha seleccionado a LEY.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220672973_a43c11ae2b_m.jpg";
+                    break;
+                    case "personaje13":
+                    mensaje1 = "Jugador 1 ha seleccionado a LIME.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220673113_2736648a0e_m.jpg";
+                    break;
+                case "personaje14":
+                mensaje1 = "Jugador 1 ha seleccionado a LIRE.";
+                    imageSrc1 ="https://live.staticflickr.com/65535/53220672938_7227e4287b_m.jpg";
+
+                    break;
+                case "personaje15":
+                    mensaje1 = "Jugador 1 ha seleccionado a MARI.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220746884_5fb92c2ef4_m.jpg";
+                    break;
+                    case "personaje16":
+                    mensaje1 = "Jugador 1 ha seleccionado a RIN.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220362121_dc15b446e1_m.jpg";
+                    break;
+                case "personaje17":
+                    mensaje1 = "Jugador 1 ha seleccionado a RONAN.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220868900_91bd2389c5_m.jpg";
+                    break;
+                    case "personaje18":
+                    mensaje1 = "Jugador 1 ha seleccionado a RUFUS.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220672868_b9a4eff420_m.jpg";
+                    break;
+                case "personaje19":
+                    mensaje1 = "Jugador 1 ha seleccionado a RYAN.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220868865_41f30ee357_m.jpg";
+                    break;
+                    case "personaje20":
+                    mensaje1 = "Jugador 1 ha seleccionado a SIEGART.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53219488612_228647acba_m.jpg";
+                    break;
+                case "personaje21":
+                mensaje1 = "Jugador 1 ha seleccionado a VEIGAS.";
+                    imageSrc1 ="https://live.staticflickr.com/65535/53219488687_e38ccf5349_m.jpg";
+
+                    break;
+                case "personaje22":
+                    mensaje1 = "Jugador 1 ha seleccionado a ZERO.";
+                    imageSrc1 = "https://live.staticflickr.com/65535/53220362026_2f98feb364_m.jpg";
                     break;
                 default:
+                
                     mensaje1 = "Jugador 1 debe seleccionar un personaje válido.";
             }
 
             switch (selectedCharacter2) {
                 case "personaje1":
-                    mensaje2 = "cpu ha seleccionado a NAOFUMI.";
+                    mensaje2 = "personaje no disponible";
                     imageSrc2 = "OIP.jpg";
                     break;
                 case "personaje2":
                     mensaje2 = "cpu ha seleccionado a AMY.";
-                    imageSrc2 = "Amy.jpg";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220362336_ea0d733b96_k.jpg";
                     break;
                 case "personaje3":
                     mensaje2 = "cpu ha seleccionado a AI.";
-                    imageSrc2 = "Ai.jpg";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220869275_c4ed811aaf_m.jpg";
                     break;
                     case "personaje4":
                     mensaje2 = "cpu ha seleccionado a ARME.";
-                    imageSrc2 = "Arme.jpg";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220362281_e9a362b40d_m.jpg";
                     break;
                 case "personaje5":
                     mensaje2 = "cpu ha seleccionado a ASIN.";
-                    imageSrc2 = "Asin.jpg";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220869085_254de1d0d7_m.jpg";;
                     break;
+                    case "personaje5":
+                    mensaje2 = "cpu ha seleccionado a ARME.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220362281_e9a362b40d_m.jpg";
+                    break;
+                    case "personaje6":
+                    mensaje2 = "cpu ha seleccionado a Decane.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220673113_2736648a0e_m.jpg";
+                    break;
+                case "personaje7":
+                mensaje2 = "cpu ha seleccionado a Dio.";
+                    imageSrc2 ="https://live.staticflickr.com/65535/53219488842_c05ea7c1a3_m.jpg";
+
+                    break;
+                case "personaje8":
+                    mensaje2 = "cpu ha seleccionado a Edel.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220747139_3d42c6cd2c_m.jpg";
+                    break;
+                    case "personaje9":
+                    mensaje2 = "cpu ha seleccionado a Elesis.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220869020_f4627b66a9_m.jpg";
+                    break;
+                case "personaje10":
+                    mensaje2 = "cpu ha seleccionado a Jin.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220672983_36bd2ebd0b_m.jpg";
+                    break;
+                    case "personaje11":
+                    mensaje2 = "CPU ha seleccionado a LASS.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220746984_5124ed75a9_m.jpg";
+                    break;
+                case "personaje12":
+                    mensaje2 = "CPU ha seleccionado a LEY.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220672973_a43c11ae2b_m.jpg";
+                    break;
+                    case "personaje13":
+                    mensaje2 = "CPU ha seleccionado a LIME.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220673113_2736648a0e_m.jpg";
+                    break;
+                case "personaje14":
+                mensaje2 = "CPU ha seleccionado a LIRE.";
+                    imageSrc2 ="https://live.staticflickr.com/65535/53220672938_7227e4287b_m.jpg";
+
+                    break;
+                case "personaje15":
+                    mensaje2 = "CPU ha seleccionado a MARI.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220746884_5fb92c2ef4_m.jpg";
+                    break;
+                    case "personaje16":
+                    mensaje2 = "CPU ha seleccionado a RIN.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220362121_dc15b446e1_m.jpg";
+                    break;
+                case "personaje17":
+                    mensaje2 = "CPU ha seleccionado a ronan.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220868900_91bd2389c5_m.jpg";
+                    break;
+                    case "personaje18":
+                    mensaje2 = "CPU ha seleccionado a RUFUS.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220672868_b9a4eff420_m.jpg";
+                    break;
+                case "personaje19":
+                    mensaje2 = "CPU ha seleccionado a RYAN.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220868865_41f30ee357_m.jpg";
+                    break;
+                    case "personaje20":
+                    mensaje2 = "CPU ha seleccionado a SIEGART.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53219488612_228647acba_m.jpg";
+                    break;
+                case "personaje21":
+                mensaje2 = "CPU ha seleccionado a VEIGAS.";
+                    imageSrc2 ="https://live.staticflickr.com/65535/53219488687_e38ccf5349_m.jpg";
+
+                    break;
+                case "personaje22":
+                    mensaje2 = "CPU ha seleccionado a ZERO.";
+                    imageSrc2 = "https://live.staticflickr.com/65535/53220362026_2f98feb364_m.jpg";
+                    break;
+
                 default:
                     mensaje2 = "cpu debe seleccionar un personaje válido.";
             }
@@ -128,7 +330,8 @@
 
             const damage = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
             const damage2 = Math.floor(Math.random() * 10) + 1; // Daño aleatorio entre 1 y 10
-
+            const progress = document.querySelector("progress");
+            const progress2 = document.querySelector("progress");
 
             if (target === 2) {
                 health1 -= damage; // El segundo personaje es atacado por el primero
@@ -146,6 +349,9 @@
                 document.getElementById('health1').textContent = health1;
                 document.getElementById('health2').textContent = health2;
             }
+ updateHealth(1, health1); 
+ updateHealth(2, health2); 
+  
 
             if (health1 < 1) {
                 alert('Personaje 2 ha ganado');
@@ -156,6 +362,41 @@
         }
         
 
+        function updateHealth(character, healthValue) {
+    const healthBar = document.getElementById(`healthBar${character}`);
+    const healthSpan = document.getElementById(`health${character}`);
+
+    // Asegurarse de que la salud esté dentro del rango 0-100
+    healthValue = Math.max(0, Math.min(100, healthValue));
+
+    // Actualizar la anchura de la barra de vida
+    healthBar.style.width = `${healthValue}%`;
+
+    // Actualizar el valor de la salud en el span
+    healthSpan.textContent = healthValue;
+}
+
+// Ejemplo de uso:
+// updateHealth(1, 75); // Actualiza la barra de vida del primer personaje a 75
+// updateHealth(2, 50); // Actualiza la barra de vida del segundo personaje a 50
+function resetearPersonajes() {
+    // Restaurar la selección de personajes a los valores predeterminados
+    const selector1 = document.getElementById("characterSelector1");
+    const selector2 = document.getElementById("characterSelector2");
+    selector1.value = "personaje1"; // Restaurar la selección del jugador 1
+    selector2.value = "personaje1"; // Restaurar la selección del jugador 2
+
+    // Restaurar la salud de ambos personajes
+    health1 = 100;
+    health2 = 100;
+
+    // Actualizar visualmente la salud y la selección de personajes
+    updateHealth(1, health1);
+    updateHealth(2, health2);
+    seleccionarPersonajes(); // Actualizar la selección de personajes visualmente
+}
+
     </script>
+    
 </body>
 </html>
