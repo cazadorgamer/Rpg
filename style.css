@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif; /* Fuente de texto predeterminada */
-    background-color: #f2f2f2; /* Color de fondo de la página */
+    background-image: url(fondo.jpg);
+     /* Color de fondo de la página */
     margin: 0; /* Elimina el margen predeterminado del cuerpo */
     padding: 0; /* Elimina el relleno predeterminado del cuerpo */
 }
@@ -8,7 +9,7 @@ body {
     display: flex;
 	@@ -10,8 +12,8 @@ body {
     margin: 0 auto;
-}
+}}
 #characterImages{
 
 
@@ -18,6 +19,8 @@ img{
 	@@ -45,3 +47,83 @@ button:hover {
 .custom-button:hover {
     background-color: #c0392b;
+}
+`}
 }
 /* Estilo general de la página */
 
