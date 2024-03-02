@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif; /* Fuente de texto predeterminada */
-    background-image: url(fondo.jpg);
-     /* Color de fondo de la página */
+    background-color: #f2f2f2; /* Color de fondo de la página */
     margin: 0; /* Elimina el margen predeterminado del cuerpo */
     padding: 0; /* Elimina el relleno predeterminado del cuerpo */
 }
@@ -11,16 +10,40 @@ body {
     margin: 0 auto;
 }}
 #characterImages{
-
-
+    
+ 
 }
 img{
     width: 200px;
-	@@ -45,3 +47,83 @@ button:hover {
+}
+/* Agrega este código en tu archivo style.css o en una etiqueta <style> en el encabezado del HTML */
+button {
+    background-color: #3498db; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Relleno (espacio alrededor del texto) */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+}
+
+/* Estilos adicionales para cuando el cursor está sobre el botón */
+button:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar por encima */
+}
+/* Estilos para botones con la clase "custom-button" */
+.custom-button {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
 .custom-button:hover {
     background-color: #c0392b;
-}
-`}
 }
 /* Estilo general de la página */
 
@@ -102,3 +125,44 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+/* Estilos para las barras de vida */
+.character-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.health-bar {
+    width: 100%;
+    height: 20px;
+    background-color: green;
+    border: 1px solid #000;
+    position: relative;
+}
+
+.health-bar-inner {
+    height: 100%;
+    width: 100%;
+    background-color: #4caf50; /* Color de fondo de la barra de vida */
+}
+
+/* Estilo para la etiqueta de salud */
+.character-bar p {
+    margin: 0;
+    font-weight: bold;
+    
+}
+/* Estilo para el footer */
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Estilo para el párrafo dentro del footer */
+footer p {
+    margin: 0; /* Eliminar margen predeterminado del párrafo */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+
