@@ -87,7 +87,7 @@ button:hover {
 /* Estilo general de la página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #b2ffff;
     margin: 0;
     padding: 0;
     display: flex; /* Utiliza flexbox para centrar verticalmente el contenido */
@@ -99,7 +99,7 @@ body {
 /* Estilo para el contenedor principal */
 .container {
     max-width: 1200px;
-    background-color: #fff;
+    background-color:  rgb(178, 255, 255);
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
