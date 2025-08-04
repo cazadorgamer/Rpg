@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <h1>Selecciona tus personajes</h1>
-
+ <button id="CambiarFondo">Cambiar fondo</button>
       <div id="player1">
         <h2>Jugador 1</h2>
         <select id="characterSelector1">
@@ -464,6 +464,32 @@
         updateHealth(2, health2);
         seleccionarPersonajes(); // Actualizar la selección de personajes visualmente
       }
+
+      
+            var boton= document.getElementById("CambiarFondo");
+         function random(numeroMaximo){
+            return Math.round(Math.random()* numeroMaximo);
+         }
+
+
+            boton.addEventListener("click", function(evento){
+                console.log(evento);
+              var randomColor =[
+                random(255),
+                random(255),
+                random(255),
+
+              ];
+              document.body.style.backgroundColor= "rgb("+ randomColor[0]+ ","+ randomColor[1]+","+ randomColor[2]+")"
+            });
+
+            document.addEventListener ("cambiarFondo", function(evento){
+console.log(evento);
+console.log(evento.detail);
+            });
+            var event= new CustomEvent("cambiarFondo",{"detail":"Hola John"});
+            document.dispatchEvent(event);
+      
     </script>
   </body>
 </html>
